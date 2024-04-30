@@ -1,11 +1,7 @@
 /* eslint-disable react/prop-types */
-import { useTeamMembersContext } from "../context/TeamMembersContextProvider";
 
-export default function ListsContainer() {
-
-  const { filteredPeopleList: people } = useTeamMembersContext();
-  
-	return (
+export default function ListsContainer({ people }) {
+  return (
     <ul role="list" className="divide-y divide-gray-100">
       {people.map((person) => (
         <li key={person.email} className="flex justify-between gap-x-6 py-5">
